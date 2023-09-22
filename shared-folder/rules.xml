@@ -1,8 +1,8 @@
-<group name="windows,sysmon">
+<group name="windows,BlackCatDetections">
 	<rule id="105301" level="10">
 		<if_group>windows</if_group>
 		
-		<field name="win.eventdata.commandLine" type="pcre2">^(?=.*vssadmin.exe)(?=.*delete).*$</field>
+		<field name="win.eventdata.commandLine" type="pcre2">(?i)^(?=.*vssadmin.exe)(?=.*delete).*$</field>
 		<description>Shadow File Deleted vssadmin.exe $(win.system.computer)</description>
 		<mitre>
 			<id>T1490</id>
@@ -12,7 +12,7 @@
 	<rule id="105302" level="10">
 		<if_group>windows</if_group>
 		
-		<field name="win.eventdata.commandLine" type="pcre2">^(?=.*wmic.exe)(?=.*shadowcopy)(?=.*delete).*$</field>
+		<field name="win.eventdata.commandLine" type="pcre2">(?i)^(?=.*wmic.exe)(?=.*shadowcopy)(?=.*delete).*$</field>
 		<description>Shadow File Deleted wmic.exe $(win.system.computer)</description>
 		<mitre>
 			<id>T1490</id>
@@ -22,8 +22,8 @@
 	<rule id="105303" level="10">
 		<if_group>windows</if_group>
 		
-		<field name="win.eventdata.commandLine" type="pcre2">^(?=.*bcdedit)(?=.*recoveryenabled)(?=.*No).*$</field>
-		<description>Shadow File Deleted wmic.exe $(win.system.computer)</description>
+		<field name="win.eventdata.commandLine" type="pcre2">(?i)^(?=.*bcdedit)(?=.*recoveryenabled)(?=.*No).*$</field>
+		<description>bcedit recovery dissabled $(win.system.computer)</description>
 		<mitre>
 			<id>T1490</id>
 		</mitre>
