@@ -3,9 +3,29 @@
 		<if_group>windows</if_group>
 		
 		<field name="win.eventdata.commandLine" type="pcre2">^(?=.*vssadmin.exe)(?=.*delete).*$</field>
-		<description>Shadow files deleted ver2 $(win.system.computer)</description>
+		<description>Shadow File Deleted vssadmin.exe $(win.system.computer)</description>
 		<mitre>
-			<id>T1059.001</id>
+			<id>T1490</id>
+		</mitre>
+	</rule>
+	
+	<rule id="105302" level="10">
+		<if_group>windows</if_group>
+		
+		<field name="win.eventdata.commandLine" type="pcre2">^(?=.*wmic.exe)(?=.*shadowcopy)(?=.*delete).*$</field>
+		<description>Shadow File Deleted wmic.exe $(win.system.computer)</description>
+		<mitre>
+			<id>T1490</id>
+		</mitre>
+	</rule>
+	
+	<rule id="105303" level="10">
+		<if_group>windows</if_group>
+		
+		<field name="win.eventdata.commandLine" type="pcre2">^(?=.*bcdedit)(?=.*recoveryenabled)(?=.*No).*$</field>
+		<description>Shadow File Deleted wmic.exe $(win.system.computer)</description>
+		<mitre>
+			<id>T1490</id>
 		</mitre>
 	</rule>
 </group>
