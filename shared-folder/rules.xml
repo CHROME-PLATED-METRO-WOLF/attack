@@ -1,0 +1,11 @@
+<group name="windows,sysmon">
+	<rule id="105301" level="10">
+		<if_group>windows</if_group>
+		
+		<field name="win.eventdata.commandLine" type="pcre2">^(?=.*vssadmin.exe)(?=.*delete).*$</field>
+		<description>Shadow files deleted ver2 $(win.system.computer)</description>
+		<mitre>
+			<id>T1059.001</id>
+		</mitre>
+	</rule>
+</group>
