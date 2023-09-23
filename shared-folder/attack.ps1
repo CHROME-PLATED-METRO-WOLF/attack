@@ -30,7 +30,7 @@ $option = Read-Host -Prompt "Select your option: "
 while ($option -ne "exit")
 {
 
-    if ($option -eq "1") 
+    if ($option -eq "1")
     {
         dissableSystemRecovery;
         Write-Host "anti-system recovery simulated" -ForegroundColor Black -BackgroundColor Green
