@@ -30,3 +30,23 @@ Write-Output "2: clear event logs"
 Write-Output "3: run net use"
 Write-Output "4: run psExec"
 Write-Output "exit: exit script"
+$option = Read-Host -Prompt 'Select your option: '
+if($option -eq "1")
+{
+
+}ElseIf ($option -eq "2")
+{
+
+}ElseIf ($option -eq "3")
+{
+
+}ElseIf ($option -eq "4")
+{
+
+}ElseIf ($option -eq "exit")
+{
+
+}else
+{
+Write-Output "Error: Please select a valid option"
+}
