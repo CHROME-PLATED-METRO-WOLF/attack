@@ -33,7 +33,17 @@
 		<if_group>windows</if_group>
 		
 		<field name="win.eventdata.commandLine" type="pcre2">(?i)^(?=.*PsExec.exe)(?=.*accepteula).*$</field>
-		<description>bcedit recovery dissabled $(win.system.computer)</description>
+		<description>PsTools run with -accepteula $(win.system.computer)</description>
+		<mitre>
+			<id>T1570</id>
+		</mitre>
+	</rule>
+	
+	<rule id="105305" level="10">
+		<if_group>windows</if_group>
+		
+		<field name="win.eventdata.commandLine" type="pcre2">(?i)^(?=.net use)(?=.*persistent)(?=.*no).*$</field>
+		<description>PsTools run with -accepteula $(win.system.computer)</description>
 		<mitre>
 			<id>T1570</id>
 		</mitre>
