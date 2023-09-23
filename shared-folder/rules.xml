@@ -49,13 +49,13 @@
 		</mitre>
 	</rule>
 	
-	<rule id="105305" level="10">
+	<rule id="105306" level="10">
 		<if_group>windows</if_group>
 		
 		<field name="win.eventdata.commandLine" type="pcre2">(?i)^(?=.*wevtutil.exe)(?=.*cl).*$</field>
-		<description>Net Use with persistence no run $(win.system.computer)</description>
+		<description>Event Logs Removed</description>
 		<mitre>
-			<id>T1033</id>
+			<id>T1070.001</id>
 		</mitre>
 	</rule>
 	
