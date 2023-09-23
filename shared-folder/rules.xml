@@ -49,4 +49,14 @@
 		</mitre>
 	</rule>
 	
+	<rule id="105305" level="10">
+		<if_group>windows</if_group>
+		
+		<field name="win.eventdata.commandLine" type="pcre2">(?i)^(?=.*wevtutil.exe)(?=.*cl).*$</field>
+		<description>Net Use with persistence no run $(win.system.computer)</description>
+		<mitre>
+			<id>T1033</id>
+		</mitre>
+	</rule>
+	
 </group>
