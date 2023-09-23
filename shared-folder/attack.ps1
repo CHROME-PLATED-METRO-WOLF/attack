@@ -7,7 +7,7 @@ function dissableSystemRecovery() {
 
 function clearLogs() {
     #loops through all event logs and deletes them
-    wevtutil el | Select-Object -First 4 {wevtutil cl "$_"}
+    wevtutil el | Select-Object -First 2 {wevtutil cl "$_"}
 }
 
 function netUse() {
@@ -27,21 +27,27 @@ Write - Output "3: run net use"
 Write - Output "4: run psExec"
 Write - Output "exit: exit script"
 $option = Read-Host -Prompt "Select your option: "
+
+
     if ($option -eq "1") 
     {
         dissableSystemRecovery;
+        Write-Output "anti-system recovery simulated"
     }
-ElseIf($option -eq "2") {
-    clearLogs
-}
-ElseIf($option -eq "3") {
-    netUse
-}
-ElseIf($option -eq "4") {
-    psExec
-}
-ElseIf($option -eq "exit") {
+    ElseIf($option -eq "2") {
+        clearLogs
+        Write-Output "Logs Cleared"
+    }
+    ElseIf($option -eq "3") {
+        netUse
+        Write-Output "Net use command simulated"
+    }
+    ElseIf($option -eq "4") {
+        psExec
+        Write-Output "psExec command simulated"
+    }
+    ElseIf($option -eq "exit") {
 
-} else {
-    Write - Output "Error: Please select a valid option"
-}
+    } else {
+        Write - Output "Error: Please select a valid option"
+    }
