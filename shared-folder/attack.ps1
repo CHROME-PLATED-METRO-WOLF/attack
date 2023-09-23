@@ -27,5 +27,6 @@ function psExec()
 Write-Output "Please select a option"
 Write-Output "1: dissable system recovery"
 Write-Output "2: clear event logs"
-Write-Output "3: run psExec"
+Write-Output "3: run net use"
+Write-Output "4: run psExec"
 Write-Output "exit: exit script"
