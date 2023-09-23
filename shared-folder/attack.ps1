@@ -32,22 +32,22 @@ $option = Read-Host -Prompt "Select your option: "
     if ($option -eq "1") 
     {
         dissableSystemRecovery;
-        Write-Output "anti-system recovery simulated"
+        Write-Host "anti-system recovery simulated" -ForegroundColor Black -BackgroundColor Green
     }
     ElseIf($option -eq "2") {
         clearLogs
-        Write-Output "Logs Cleared"
+        Write-Host "Logs Cleared" -ForegroundColor Black -BackgroundColor Green
     }
     ElseIf($option -eq "3") {
         netUse
-        Write-Output "Net use command simulated"
+        Write-Host "Net use command simulated" -ForegroundColor Black -BackgroundColor Green
     }
     ElseIf($option -eq "4") {
         psExec
-        Write-Output "psExec command simulated"
+        Write-Host "psExec command simulated" -ForegroundColor Black -BackgroundColor Green
     }
     ElseIf($option -eq "exit") {
 
     } else {
-        Write - Output "Error: Please select a valid option"
+        Write-Host "Error: Please select a valid option" -ForegroundColor Black -BackgroundColor Red
     }
